@@ -100,3 +100,16 @@ a:hover {
 html {
   scroll-behavior: smooth;
 }
+
+/* Selection Color */
+::selection {
+  background-color: var(--violet);
+  color: white;
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 2px;
+  border-radius: 4px;
+}

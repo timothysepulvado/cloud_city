@@ -18,10 +18,13 @@ export const Comparison: React.FC<SectionProps> = ({ className }) => {
         >
           <thead>
             <tr>
-              {COMPARISON.headers.map((header) => (
+              {COMPARISON.headers.map((header, index) => (
                 <th 
                   key={header}
-                  className="p-[14px_12px] border-b border-[var(--line)] bg-violet/[0.06] text-left"
+                  className={cn(
+                    "p-[14px_12px] border-b border-[var(--line)] bg-violet/[0.06] text-left font-semibold",
+                    index === 1 && "text-violet"
+                  )}
                 >
                   {header}
                 </th>
@@ -31,13 +34,13 @@ export const Comparison: React.FC<SectionProps> = ({ className }) => {
           <tbody>
             {COMPARISON.rows.map((row, index) => (
               <tr key={index}>
-                <td className="p-[14px_12px] border-b border-[var(--line)] bg-white">
+                <td className="p-[14px_12px] border-b border-[var(--line)] bg-white font-semibold">
                   {row.dimension}
                 </td>
-                <td className="p-[14px_12px] border-b border-[var(--line)] bg-white">
+                <td className="p-[14px_12px] border-b border-[var(--line)] bg-gradient-to-r from-violet/[0.02] to-transparent">
                   {row.brandstudios}
                 </td>
-                <td className="p-[14px_12px] border-b border-[var(--line)] bg-white">
+                <td className="p-[14px_12px] border-b border-[var(--line)] bg-white text-muted">
                   {row.competitor}
                 </td>
               </tr>

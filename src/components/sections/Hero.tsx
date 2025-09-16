@@ -8,7 +8,7 @@ export const Hero: React.FC<SectionProps> = ({ className }) => {
   return (
     <section 
       className={cn(
-        'mt-5 p-6 md:p-12 rounded-[var(--radius)] gradient-card shadow-[var(--shadow)] relative overflow-hidden',
+        'mt-5 p-8 md:p-12 lg:p-16 rounded-[var(--radius)] gradient-card shadow-[var(--shadow)] relative overflow-hidden',
         className
       )}
       id="top"
@@ -23,7 +23,7 @@ export const Hero: React.FC<SectionProps> = ({ className }) => {
       />
       
       <div className="relative z-10">
-        <h1 className="font-heading font-extrabold text-[clamp(34px,5vw,60px)] text-ink mt-2 mb-3 leading-tight">
+        <h1 className="font-heading font-extrabold text-[clamp(36px,5vw,64px)] text-ink mt-2 mb-4 leading-[1.1]">
           {HERO.headline}
         </h1>
         

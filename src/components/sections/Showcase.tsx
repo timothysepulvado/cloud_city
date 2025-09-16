@@ -19,10 +19,11 @@ export const Showcase: React.FC<SectionProps> = ({ className }) => {
         {SHOWCASE.videos.map((video, index) => (
           <video
             key={index}
-            className="aspect-video w-full rounded-[16px] bg-gray-200 border border-[var(--line)] shadow-[var(--shadow)]"
+            className="aspect-video w-full rounded-[16px] bg-gray-100 border border-[var(--line)] shadow-[var(--shadow)] object-cover"
             controls
             preload="metadata"
             aria-label={video.ariaLabel}
+            poster=""
           >
             <source src={video.src} type="video/mp4" />
             Your browser does not support the video tag.
