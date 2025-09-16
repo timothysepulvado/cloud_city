@@ -1,36 +1,216 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BrandStudios.AI Landing Page
 
-## Getting Started
+## 🚀 Overview
 
-First, run the development server:
+A modern, high-performance landing page for BrandStudios.AI - a marketing automation platform that combines AI with human intelligence to create, syndicate, and measure brand content.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🎯 Project Goals
+
+1. **Easy to maintain** - Clean component structure, well-documented code
+2. **Visually stunning** - Modern gradients, animations, responsive design
+3. **Performance-focused** - Fast load times, optimized assets, SEO-ready
+4. **Brand-aligned** - Consistent with BrandStudios.AI identity
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel (recommended)
+- **Package Manager**: npm
+
+## 📁 Project Structure
+
+```
+brandstudios-landing/
+├── src/
+│   ├── app/                    # Next.js app directory
+│   │   ├── layout.tsx          # Root layout with global providers
+│   │   ├── page.tsx            # Main landing page
+│   │   └── globals.css         # Global styles and Tailwind directives
+│   ├── components/
+│   │   ├── layout/             # Layout components
+│   │   │   ├── Header.tsx      # Navigation header
+│   │   │   └── Footer.tsx      # Footer component
+│   │   ├── sections/           # Page sections
+│   │   │   ├── Hero.tsx        # Hero section with main value prop
+│   │   │   ├── CoreCapabilities.tsx # Create/Syndicate/Measure cards
+│   │   │   ├── Outcomes.tsx    # Productivity outcomes & intelligence
+│   │   │   ├── Showcase.tsx    # Video showcase section
+│   │   │   ├── Features.tsx    # Features & integrations
+│   │   │   ├── Security.tsx    # Security & compliance info
+│   │   │   ├── Comparison.tsx  # Comparison table
+│   │   │   └── ContactCTA.tsx  # Contact/demo CTA section
+│   │   └── ui/                 # Reusable UI components
+│   │       ├── Card.tsx        # Card component with hover effects
+│   │       ├── Badge.tsx       # Gradient badge component
+│   │       ├── Button.tsx      # CTA button component
+│   │       └── Pill.tsx        # Tag/pill component
+│   ├── lib/
+│   │   ├── constants.ts       # All copy/text content
+│   │   └── utils.ts           # Utility functions
+│   └── types/
+│       └── index.ts            # TypeScript type definitions
+├── public/                     # Static assets
+│   └── videos/                # Video assets (if local)
+├── docs/                      # Documentation
+│   ├── README.md              # This file
+│   ├── RULES.md              # Coding standards
+│   ├── CONTEXT.md            # Context tracking
+│   └── TODO.md               # Task management
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 18+ 
+- npm or yarn
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Clone the repository (if applicable)
+git clone [repository-url]
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Navigate to project
+cd brandstudios-landing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Install dependencies
+npm install
 
-## Deploy on Vercel
+# Run development server
+npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Open browser
+open http://localhost:3000
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Development
+
+```bash
+# Development server with hot reload
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Type checking
+npm run type-check
+
+# Format code
+npm run format
+```
+
+## 🎨 Design System
+
+### Colors
+- **Primary Violet**: #8c6eff
+- **Rose**: #ff7aa2
+- **Mint**: #57d9a3
+- **Sun**: #ffcb6b
+- **Background**: #fafafa → #ffffff gradient
+- **Ink (Text)**: #1c1c1e
+- **Muted**: #5f6571
+
+### Typography
+- **Headings**: Poppins (600-800 weight)
+- **Body**: Inter (300-600 weight)
+- **Responsive sizing** with clamp() for fluid typography
+
+### Components
+- **Cards**: Gradient background, hover lift effect
+- **Badges**: Gradient violet-to-rose
+- **Pills**: Light violet background tags
+- **CTAs**: Gradient buttons with shadow
+
+## 🌐 Content Sections
+
+1. **Hero** - Main value proposition
+2. **Core Capabilities** - Create, Syndicate, Measure
+3. **Outcomes** - Productivity metrics & Brand Intelligence
+4. **Showcase** - Video demonstrations
+5. **Features** - Key features for creative teams
+6. **Integrations** - Native MCP-first connectors
+7. **Security** - Security & compliance details
+8. **Comparison** - Competitive comparison table
+9. **Contact** - Demo request CTA
+
+## 📝 Copy Management
+
+All copy is centralized in `src/lib/constants.ts` for easy updates:
+- Section headings
+- Descriptions
+- Feature lists
+- Statistics
+- CTAs
+
+## 🔧 Environment Variables
+
+Create a `.env.local` file:
+
+```env
+# Analytics (optional)
+NEXT_PUBLIC_GA_ID=your-ga-id
+
+# API endpoints (if needed)
+NEXT_PUBLIC_API_URL=https://api.brandstudios.ai
+
+# Video CDN
+NEXT_PUBLIC_VIDEO_CDN=https://res.cloudinary.com/...
+```
+
+## 📊 Performance
+
+- Lighthouse Score Target: 95+
+- Core Web Vitals optimized
+- Image optimization via Next.js
+- Font optimization
+- Code splitting
+
+## 🚢 Deployment
+
+### Vercel (Recommended)
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+
+# Deploy to production
+vercel --prod
+```
+
+### Other Platforms
+
+The project exports a static site that can be deployed to:
+- Netlify
+- AWS S3 + CloudFront
+- Google Cloud
+- Any static hosting
+
+## 📄 License
+
+Proprietary - BrandStudios.AI
+
+## 👥 Team
+
+- Design: [Designer Name]
+- Development: [Your Name]
+- Content: [Content Team]
+
+## 📞 Support
+
+For questions or issues:
+- Email: russ.barnett@icloud.com
+- Documentation: See `/docs` folder
+
+---
+
+Last Updated: September 2025
