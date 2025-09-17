@@ -7,9 +7,9 @@ import type { SectionProps } from '@/types'
 
 export const Security: React.FC<SectionProps> = ({ className }) => {
   return (
-    <>
+    <section id="security" className={className}>
       {/* Security & Compliance */}
-      <Card className={className} id="security">
+      <Card>
         <div className="text-[12px] font-semibold uppercase tracking-[0.3px] text-muted mb-[6px]">
           {SECURITY.eyebrow}
         </div>
@@ -44,7 +44,7 @@ export const Security: React.FC<SectionProps> = ({ className }) => {
           ))}
         </div>
       </Card>
-    </>
+    </section>
   )
 }
 

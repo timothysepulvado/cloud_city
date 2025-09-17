@@ -14,21 +14,23 @@ export const CoreCapabilities: React.FC<SectionProps> = ({ className }) => {
       aria-label="Core capabilities"
     >
       {capabilities.map((capability, index) => (
-        <Card key={capability.badge} id={capability.badge.toLowerCase()}>
-          <Badge variant="gradient">{capability.badge}</Badge>
-          
-          <div className="text-[12px] font-semibold uppercase tracking-[0.3px] text-muted mb-[6px]">
-            {capability.eyebrow}
-          </div>
-          
-          <h3 className="font-heading font-semibold text-[clamp(18px,2vw,22px)] text-ink my-2">
-            {capability.title}
-          </h3>
-          
-          <p className="text-muted">
-            {capability.description}
-          </p>
-        </Card>
+        <div key={capability.badge} id={capability.badge.toLowerCase()}>
+          <Card>
+            <Badge variant="gradient">{capability.badge}</Badge>
+            
+            <div className="text-[12px] font-semibold uppercase tracking-[0.3px] text-muted mb-[6px]">
+              {capability.eyebrow}
+            </div>
+            
+            <h3 className="font-heading font-semibold text-[clamp(18px,2vw,22px)] text-ink my-2">
+              {capability.title}
+            </h3>
+            
+            <p className="text-muted">
+              {capability.description}
+            </p>
+          </Card>
+        </div>
       ))}
     </section>
   )

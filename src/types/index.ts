@@ -53,10 +53,12 @@ export interface BadgeProps extends BaseComponentProps {
 // Button Types
 export interface ButtonProps extends BaseComponentProps {
   href?: string
-  onClick?: () => void
+  onClick?: (e?: React.MouseEvent) => void
   variant?: 'primary' | 'secondary'
   size?: 'sm' | 'md' | 'lg'
   ariaLabel?: string
+  type?: 'button' | 'submit' | 'reset'
+  disabled?: boolean
 }
 
 // Pill Types
