@@ -8,7 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### To Be Added
-- Framer Motion animations for page transitions and scroll effects
 - Analytics tracking (Google Analytics or similar)
 - Vercel deployment configuration
 - Loading states and error boundaries
@@ -18,6 +17,55 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - API integration for form submissions (replace mailto)
 - SEO optimization with meta tags and structured data
 - Unit and integration testing setup
+- Complete page transitions and navigation animations
+
+## [0.2.4] - 2025-09-18
+
+### Added
+- **Framer Motion Animation System**:
+  - Installed and integrated Framer Motion library
+  - Created centralized animation utilities in `src/lib/animations.ts`
+  - Implemented reusable animation variants (fadeIn, fadeInUp, scaleIn, etc.)
+  - Added smooth easing curves and consistent timing constants
+  
+- **Hero Section Animations**:
+  - Staggered entrance animations for all hero elements
+  - Special gradient text animation for "brand" word
+  - Smooth scale and fade effects for video
+  - Bouncy pill animations with hover states
+  
+- **Scroll-Triggered Animations**:
+  - Section reveal animations triggered at 30% viewport visibility
+  - Implemented in Showcase and Features sections
+  - Cards animate in with staggered timing
+  - Smooth fade-up effects for content
+  
+- **Micro-Interactions**:
+  - Enhanced button hover/tap states with spring physics
+  - Card hover effects with scale transforms (1.02-1.05x)
+  - Video showcase cards with enhanced hover animations
+  - Pill hover/tap animations in hero section
+
+### Technical Implementation
+- Created AnimatedSection component for reusable scroll animations
+- Updated Hero, Showcase, Features, and Button components with motion elements
+- Maintained 60fps performance with GPU-accelerated transforms
+- Used Framer Motion's useInView hook for optimal scroll detection
+
+## [0.2.3] - 2025-09-18
+
+### Changed
+- **Hero Section Layout Enhancement**:
+  - Restructured headline to span full width as banner-style layout
+  - Applied gradient treatment to "brand" word in headline (violet to rose)
+  - Reorganized into proper two-column layout with aligned video and text
+  - Video now perfectly aligns with descriptive paragraph
+
+### Technical Updates
+- Modified HERO constant structure to support prefix/highlight/suffix headline format
+- Updated Hero.tsx with banner headline + two-column grid layout
+- Added Headline interface to TypeScript definitions for type safety
+- Enhanced typography with gradient text treatment for highlighted words
 
 ## [0.2.2] - 2025-09-18
 

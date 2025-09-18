@@ -1,14 +1,23 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import { Card } from '@/components/ui/Card'
 import { SHOWCASE } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import type { SectionProps } from '@/types'
+import { staggerContainer, fadeInUp, ANIMATION } from '@/lib/animations'
 
 export const Showcase: React.FC<SectionProps> = ({ className }) => {
   // Track which video is active (hovered or playing)
   const [activeVideoIndex, setActiveVideoIndex] = useState<number | null>(null)
+  
+  // Reference for scroll animations
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const isInView = useInView(sectionRef, { 
+    once: ANIMATION.viewport.once, 
+    amount: ANIMATION.viewport.amount 
+  })
   
   // Helper function to get aspect ratio classes
   const getAspectRatioClass = (format: string) => {
@@ -92,23 +101,38 @@ export const Showcase: React.FC<SectionProps> = ({ className }) => {
   }
 
   return (
-    <Card className={className}>
+    <motion.div
+      ref={sectionRef}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={staggerContainer}
+    >
+      <Card className={className}>
       <div className="text-[12px] font-semibold uppercase tracking-[0.3px] text-muted mb-[6px]">
         {SHOWCASE.eyebrow}
       </div>
       
-      <h2 className="font-heading font-bold text-[clamp(24px,3.2vw,36px)] text-ink my-2">
+      <motion.h2 
+        variants={fadeInUp}
+        className="font-heading font-bold text-[clamp(24px,3.2vw,36px)] text-ink my-2"
+      >
         {SHOWCASE.title}
-      </h2>
+      </motion.h2>
 
       {SHOWCASE.subtitle && (
-        <p className="text-muted text-[16px] mb-8">
+        <motion.p 
+          variants={fadeInUp}
+          className="text-muted text-[16px] mb-8"
+        >
           {SHOWCASE.subtitle}
-        </p>
+        </motion.p>
       )}
       
       {/* Responsive grid layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 place-items-center">
+      <motion.div 
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 place-items-center"
+        variants={staggerContainer}
+      >
         {SHOWCASE.videos.map((video, index) => {
           const platformStyle = getPlatformStyle(video.platform || '')
           const aspectClass = getAspectRatioClass(video.format || '16:9')
@@ -116,8 +140,22 @@ export const Showcase: React.FC<SectionProps> = ({ className }) => {
           const isActive = activeVideoIndex === index
           
           return (
-            <div 
-              key={index} 
+            <motion.div 
+              key={index}
+              variants={{
+                hidden: { opacity: 0, y: 30, scale: 0.95 },
+                visible: { 
+                  opacity: 1, 
+                  y: 0, 
+                  scale: 1,
+                  transition: {
+                    duration: 0.5,
+                    ease: [0.25, 0.1, 0.25, 1.0],
+                    delay: index * 0.1
+                  }
+                }
+              }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               className={cn(
                 "flex flex-col items-center w-full max-w-[320px] relative transition-all duration-300",
                 // Active video gets higher z-index and scales up slightly
@@ -201,15 +239,16 @@ export const Showcase: React.FC<SectionProps> = ({ className }) => {
               {activeVideoIndex !== null && !isActive && (
                 <div className="absolute inset-0 bg-white/30 backdrop-blur-[1px] rounded-[16px] z-20 pointer-events-none transition-all duration-300" />
               )}
-            </div>
+            </motion.div>
           )
         })}
-      </div>
+      </motion.div>
       
       <p className="text-muted text-[12px] mt-8 text-center">
         {SHOWCASE.note}
       </p>
     </Card>
+    </motion.div>
   )
 }
 

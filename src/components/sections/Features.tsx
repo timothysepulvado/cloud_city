@@ -1,16 +1,32 @@
-import React from 'react'
+'use client';
+
+import React, { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import { Card } from '@/components/ui/Card'
 import { FEATURES, MEASUREMENT } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import type { SectionProps } from '@/types'
+import { staggerContainer, fadeInUp, listItem, ANIMATION } from '@/lib/animations'
 
 export const Features: React.FC<SectionProps> = ({ className }) => {
+  const featuresRef = useRef<HTMLElement>(null)
+  const measurementRef = useRef<HTMLDivElement>(null)
+  const featuresInView = useInView(featuresRef, { once: ANIMATION.viewport.once, amount: ANIMATION.viewport.amount })
+  const measurementInView = useInView(measurementRef, { once: ANIMATION.viewport.once, amount: ANIMATION.viewport.amount })
+  
   return (
     <>
       {/* Features & Integrations */}
-      <section className={cn('grid grid-cols-1 md:grid-cols-2 gap-[18px] my-7', className)}>
+      <motion.section 
+        ref={featuresRef}
+        initial="hidden"
+        animate={featuresInView ? "visible" : "hidden"}
+        variants={staggerContainer}
+        className={cn('grid grid-cols-1 md:grid-cols-2 gap-[18px] my-7', className)}
+      >
         {/* Creative Features */}
-        <Card>
+        <motion.div variants={fadeInUp} whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}>
+          <Card>
           <div className="text-[12px] font-semibold uppercase tracking-[0.3px] text-muted mb-[6px]">
             {FEATURES.creative.eyebrow}
           </div>
@@ -29,10 +45,12 @@ export const Features: React.FC<SectionProps> = ({ className }) => {
               </li>
             ))}
           </ul>
-        </Card>
+          </Card>
+        </motion.div>
 
         {/* Integrations */}
-        <Card>
+        <motion.div variants={fadeInUp} whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}>
+          <Card>
           <div className="text-[12px] font-semibold uppercase tracking-[0.3px] text-muted mb-[6px]">
             {FEATURES.integrations.eyebrow}
           </div>
@@ -51,11 +69,19 @@ export const Features: React.FC<SectionProps> = ({ className }) => {
               </li>
             ))}
           </ul>
-        </Card>
-      </section>
+          </Card>
+        </motion.div>
+      </motion.section>
 
       {/* Measurement */}
-      <Card className={className}>
+      <motion.div
+        ref={measurementRef}
+        initial="hidden"
+        animate={measurementInView ? "visible" : "hidden"}
+        variants={fadeInUp}
+        whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
+      >
+        <Card className={className}>
         <div className="text-[12px] font-semibold uppercase tracking-[0.3px] text-muted mb-[6px]">
           {MEASUREMENT.eyebrow}
         </div>
@@ -72,9 +98,10 @@ export const Features: React.FC<SectionProps> = ({ className }) => {
             >
               {item}
             </li>
-          ))}
+          )          )}
         </ul>
-      </Card>
+        </Card>
+      </motion.div>
     </>
   )
 }

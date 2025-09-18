@@ -93,6 +93,28 @@ Default → Hover (bg: violet/5) → Active (scale: 0.98)
 
 ### Content Display Patterns
 
+#### Hero Section Layout
+**Purpose**: Primary landing section with banner headline and two-column content
+**Implementation**: `src/components/sections/Hero.tsx`
+
+```typescript
+// Banner Layout Structure
+1. Full-width banner headline (center-aligned)
+2. Two-column grid layout below (text left, video right)
+3. Responsive grid: 1 column mobile → 2 columns desktop
+
+// Typography Enhancement
+- Gradient text treatment for highlighted words
+- Uses bg-clip-text with violet-to-rose gradient
+- Maintains semantic HTML with h1 tag
+```
+
+**Visual Hierarchy**:
+- **Banner Headline**: Full-width, center-aligned, large typography
+- **Left Column**: Descriptive text and action pills
+- **Right Column**: Video content with glow effects
+- **Responsive**: Stacks vertically on mobile devices
+
 #### Card Component
 **Purpose**: Content container with consistent styling
 **Usage**: Features, capabilities, CTAs
@@ -466,4 +488,118 @@ Step 1 → Step 2 → Step 3 → Complete
 
 ## 🔄 Update Log
 - Initial patterns documented: September 2025
+- Animation patterns added: September 2025 (v0.2.4)
 - Last updated: September 2025
+
+---
+
+## 🎬 Animation Patterns (v0.2.4)
+
+### Core Animation System
+**Location**: `src/lib/animations.ts`
+**Purpose**: Centralized animation constants and reusable variants
+
+```typescript
+// Animation timing constants
+export const ANIMATION = {
+  duration: {
+    fast: 0.2,    // Micro-interactions
+    normal: 0.4,  // Standard transitions
+    slow: 0.6,    // Section reveals
+    slower: 0.8,  // Hero elements
+  },
+  ease: {
+    smooth: [0.25, 0.1, 0.25, 1.0],  // Default easing
+    bounce: [0.68, -0.55, 0.265, 1.55], // Playful elements
+  },
+  viewport: {
+    once: true,   // Animate only on first view
+    amount: 0.3,  // Trigger at 30% visible
+  }
+}
+```
+
+### Common Animation Patterns
+
+#### 1. Scroll-Triggered Reveals
+```tsx
+const ref = useRef(null)
+const isInView = useInView(ref, { 
+  once: true, 
+  amount: 0.3 
+})
+
+<motion.section
+  ref={ref}
+  initial="hidden"
+  animate={isInView ? "visible" : "hidden"}
+  variants={sectionReveal}
+>
+```
+
+#### 2. Staggered Children
+```tsx
+<motion.div variants={staggerContainer}>
+  {items.map((item, i) => (
+    <motion.div 
+      key={i}
+      variants={fadeInUp}
+      custom={i}  // For custom delays
+    >
+      {item}
+    </motion.div>
+  ))}
+</motion.div>
+```
+
+#### 3. Button Micro-interactions
+```tsx
+<motion.button
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  transition={{ duration: 0.2 }}
+>
+```
+
+#### 4. Card Hover Effects
+```tsx
+<motion.div
+  whileHover={{ 
+    scale: 1.02,
+    y: -3,
+    transition: { duration: 0.2 }
+  }}
+>
+```
+
+### Section-Specific Animations
+
+#### Hero Section
+- **Headline**: Fade in with y: 20 → 0
+- **Brand word**: Special scale animation with gradient
+- **Pills**: Staggered bounce-in effect
+- **Video**: Scale from 0.95 → 1 with fade
+
+#### Showcase Section
+- **Grid**: Staggered card entrance
+- **Videos**: Scale on hover with z-index management
+- **Active state**: 1.05x scale with enhanced shadow
+
+#### Features Section
+- **Cards**: Fade up on scroll
+- **Lists**: Staggered item reveals
+- **Hover**: Subtle scale transform
+
+### Performance Guidelines
+
+1. **GPU Acceleration**: Use transform and opacity for smooth 60fps
+2. **Will-change**: Avoid overuse, apply only when needed
+3. **Reduced Motion**: Respect user preferences
+```tsx
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches
+```
+
+4. **Lazy Animation**: Use viewport detection to avoid unnecessary animations
+5. **Batch Updates**: Use Framer Motion's layout animations for DOM changes

@@ -22,7 +22,11 @@ export const NAVIGATION = {
 }
 
 export const HERO = {
-  headline: "Every great brand begins with a human spark.",
+  headline: {
+    prefix: "Every great ",
+    highlight: "brand",
+    suffix: " begins with a human spark."
+  },
   subheadline: "We help that spark grow into momentum. With seamless automation, flowing workflows, and insights you can trust, BrandStudios.ai gives you room to do what matters most: shaping stories, building relationships, and creating lasting impact. Think of it less as a tool, more as a creative partner built around your brand, your voice, your vision.",
   pills: ["Create", "Syndicate", "Measure"],
   video: {

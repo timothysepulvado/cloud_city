@@ -27,6 +27,12 @@ export interface Feature {
   description: string
 }
 
+export interface Headline {
+  prefix: string
+  highlight: string
+  suffix: string
+}
+
 export interface Video {
   src: string
   ariaLabel: string
