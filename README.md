@@ -30,8 +30,9 @@ brandstudios-landing/
 │   │   └── globals.css         # Global styles and Tailwind directives
 │   ├── components/
 │   │   ├── layout/             # Layout components
-│   │   │   ├── Header.tsx      # Navigation header
-│   │   │   └── Footer.tsx      # Footer component
+│   │   │   ├── Header.tsx      # Navigation header with mobile menu
+│   │   │   ├── Footer.tsx      # Footer component
+│   │   │   └── ClientLayout.tsx # Client-side providers wrapper
 │   │   ├── sections/           # Page sections
 │   │   │   ├── Hero.tsx        # Hero section with main value prop
 │   │   │   ├── CoreCapabilities.tsx # Create/Syndicate/Measure cards
@@ -41,11 +42,16 @@ brandstudios-landing/
 │   │   │   ├── Security.tsx    # Security & compliance info
 │   │   │   ├── Comparison.tsx  # Comparison table
 │   │   │   └── ContactCTA.tsx  # Contact/demo CTA section
-│   │   └── ui/                 # Reusable UI components
-│   │       ├── Card.tsx        # Card component with hover effects
-│   │       ├── Badge.tsx       # Gradient badge component
-│   │       ├── Button.tsx      # CTA button component
-│   │       └── Pill.tsx        # Tag/pill component
+│   │   ├── ui/                 # Reusable UI components
+│   │   │   ├── Card.tsx        # Card component with hover effects
+│   │   │   ├── Badge.tsx       # Gradient badge component
+│   │   │   ├── Button.tsx      # CTA button component
+│   │   │   ├── Modal.tsx       # Modal dialog component
+│   │   │   └── Pill.tsx        # Tag/pill component
+│   │   └── forms/              # Form components
+│   │       └── DemoRequestForm.tsx # Demo request form with fields
+│   ├── contexts/               # React contexts
+│   │   └── DemoModalContext.tsx # Global modal state management
 │   ├── lib/
 │   │   ├── constants.ts       # All copy/text content
 │   │   └── utils.ts           # Utility functions
@@ -54,10 +60,11 @@ brandstudios-landing/
 ├── public/                     # Static assets
 │   └── videos/                # Video assets (if local)
 ├── docs/                      # Documentation
-│   ├── README.md              # This file
-│   ├── RULES.md              # Coding standards
-│   ├── CONTEXT.md            # Context tracking
-│   └── TODO.md               # Task management
+│   ├── CONTEXT.md            # Business context & requirements
+│   ├── RULES.md              # Coding standards & best practices
+│   ├── DESIGN-SYSTEM.md      # Complete design system documentation
+│   ├── UI-PATTERNS.md        # UI patterns & interactions guide
+│   └── COMPONENT-REFERENCE.md # Quick component usage reference
 └── package.json
 ```
 
@@ -171,6 +178,16 @@ NEXT_PUBLIC_VIDEO_CDN=https://res.cloudinary.com/...
 - Image optimization via Next.js
 - Font optimization
 - Code splitting
+
+## 📚 Documentation
+
+Comprehensive documentation is available in the `/docs` directory:
+
+- **[Design System](/docs/DESIGN-SYSTEM.md)** - Complete design tokens, colors, typography, spacing
+- **[UI Patterns](/docs/UI-PATTERNS.md)** - Interaction patterns, animations, responsive behaviors
+- **[Component Reference](/docs/COMPONENT-REFERENCE.md)** - Quick guide for using all components
+- **[Development Rules](/docs/RULES.md)** - Coding standards and best practices
+- **[Project Context](/docs/CONTEXT.md)** - Business requirements and brand guidelines
 
 ## 🚢 Deployment
 
