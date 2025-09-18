@@ -114,19 +114,25 @@ Default → Hover (bg: violet/5) → Active (scale: 0.98)
 - 200ms transition
 
 #### Video Showcase Grid
-**Layout**: 2x2 grid
+**Layout**: Responsive grid (1 column mobile → 2 columns tablet → 4 columns desktop)
 **Behavior**:
-- Lazy loading with intersection observer
-- Play on hover/focus
-- Muted by default
-- Accessible controls
+- Social media aspect ratios (9:16, 1:1, 4:5, 16:9)
+- Platform-specific branding and labels
+- Dynamic z-index management for active videos
+- Accessible controls with proper ARIA attributes
 
 ```typescript
 // Interaction pattern
-1. Videos load when 50% visible
-2. Hover/focus triggers autoplay
-3. Click for full controls
-4. Tab navigation supported
+1. Videos display with platform badges (TikTok, Instagram, YouTube)
+2. Format labels show user-friendly names (Vertical, Square, Portrait)
+3. Hover/play brings video to front (z-50) with scale animation
+4. Enhanced visual feedback with border and shadow changes
+5. State management tracks active video index
+
+// Z-index layering
+- Default state: z-10 for all videos
+- Active state (hover/play): z-50 to bring forward
+- Smooth transitions with 300ms duration
 ```
 
 #### Comparison Table

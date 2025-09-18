@@ -19,6 +19,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - SEO optimization with meta tags and structured data
 - Unit and integration testing setup
 
+## [0.2.2] - 2025-09-18
+
+### Changed
+- **Enhanced Showcase Video Display**:
+  - Implemented social media aspect ratios (9:16 for TikTok/Reels, 1:1 for Instagram, 4:5 for posts)
+  - Added platform labels with brand colors and icons
+  - Added user-friendly format badges (Vertical, Square, Portrait, Landscape)
+  - Fixed z-index layering issue - videos now properly come to front on hover/play
+  - Added smooth scale animations (1.05x) for active videos
+  - Enhanced visual feedback with border and shadow effects
+
+### Improved
+- **Code Quality & Accessibility**:
+  - Removed empty poster attributes from video elements
+  - Added aria-hidden="true" to decorative platform icons
+  - Replaced technical aspect ratios with user-friendly labels
+  - Added state management for tracking active video (hover/play states)
+
+### Technical Updates
+- Modified Showcase.tsx to include useState for active video tracking
+- Added dynamic z-index management (z-10 default, z-50 for active)
+- Implemented platform-specific styling with brand colors
+- Added helper functions for aspect ratio classes and platform styles
+- Enhanced hover and play event handlers for proper video layering
+
 ## [0.2.1] - 2025-09-18
 
 ### Changed
