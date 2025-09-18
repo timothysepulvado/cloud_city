@@ -25,6 +25,10 @@ export const HERO = {
   headline: "Every great brand begins with a human spark.",
   subheadline: "We help that spark grow into momentum. With seamless automation, flowing workflows, and insights you can trust, BrandStudios.ai gives you room to do what matters most: shaping stories, building relationships, and creating lasting impact. Think of it less as a tool, more as a creative partner built around your brand, your voice, your vision.",
   pills: ["Create", "Syndicate", "Measure"],
+  video: {
+    src: "https://res.cloudinary.com/dbhzrfwvx/video/upload/v1754939611/huqmuvbvm923ndwytszv.mp4",
+    ariaLabel: "BrandStudios.AI Platform Overview",
+  },
 }
 
 export const CORE_CAPABILITIES = {
@@ -81,22 +85,31 @@ export const BRAND_INTELLIGENCE = {
 export const SHOWCASE = {
   eyebrow: "Showcase",
   title: "See it in motion",
+  subtitle: "Content optimized for every platform",
   videos: [
     {
       src: "https://res.cloudinary.com/dbhzrfwvx/video/upload/v1754939611/huqmuvbvm923ndwytszv.mp4",
-      ariaLabel: "Showreel 1",
+      ariaLabel: "TikTok Reel Example",
+      platform: "tiktok",
+      format: "9:16", // Vertical video
     },
     {
       src: "https://res.cloudinary.com/dbhzrfwvx/video/upload/v1754939733/ndwqzyuyujlp9lbd3vvp.mp4",
-      ariaLabel: "Showreel 2",
+      ariaLabel: "Instagram Reel Example",
+      platform: "instagram-reel",
+      format: "9:16", // Vertical video
     },
     {
       src: "https://res.cloudinary.com/dbhzrfwvx/video/upload/v1757959292/s5xqh6rfdhrbp9ilcnu4.mp4",
-      ariaLabel: "Showreel 3",
+      ariaLabel: "Instagram Post Example",
+      platform: "instagram-post",
+      format: "1:1", // Square video
     },
     {
       src: "https://res.cloudinary.com/dbhzrfwvx/video/upload/v1757959481/gzs6cxvu254gksckvh5h.mp4",
-      ariaLabel: "Showreel 4",
+      ariaLabel: "YouTube Short Example",
+      platform: "youtube-short",
+      format: "9:16", // Vertical video
     },
   ],
   note: "Note: Videos stream from Cloudinary; replace sources if you have final cuts.",

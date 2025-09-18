@@ -19,6 +19,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - SEO optimization with meta tags and structured data
 - Unit and integration testing setup
 
+## [0.2.1] - 2025-09-18
+
+### Changed
+- **Layout Improvements**:
+  - Added video placement in Hero section with responsive grid layout (1 column mobile, 2 columns desktop)
+  - Resized Showcase videos to be more compact (2x2 on mobile, 4x1 on desktop)
+  - Added hover effects on Showcase videos with violet ring highlight
+  - Hero video includes subtle glow effect for visual enhancement
+
+### Technical Updates
+- Updated Hero.tsx to support video display with responsive grid
+- Modified Showcase.tsx for compact video grid layout  
+- Extended HERO constant in constants.ts with video configuration
+
 ## [0.2.0] - 2025-09-18
 
 ### Added

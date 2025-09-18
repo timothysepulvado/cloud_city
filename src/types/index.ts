@@ -31,6 +31,8 @@ export interface Video {
   src: string
   ariaLabel: string
   poster?: string
+  platform?: string
+  format?: string
 }
 
 export interface ComparisonRow {
