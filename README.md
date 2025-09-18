@@ -64,7 +64,9 @@ brandstudios-landing/
 │   ├── RULES.md              # Coding standards & best practices
 │   ├── DESIGN-SYSTEM.md      # Complete design system documentation
 │   ├── UI-PATTERNS.md        # UI patterns & interactions guide
-│   └── COMPONENT-REFERENCE.md # Quick component usage reference
+│   ├── COMPONENT-REFERENCE.md # Quick component usage reference
+│   └── DOCUMENTATION-GUIDE.md # How to maintain documentation
+├── CHANGELOG.md               # Version history and changes
 └── package.json
 ```
 
@@ -187,7 +189,17 @@ Comprehensive documentation is available in the `/docs` directory:
 - **[UI Patterns](/docs/UI-PATTERNS.md)** - Interaction patterns, animations, responsive behaviors
 - **[Component Reference](/docs/COMPONENT-REFERENCE.md)** - Quick guide for using all components
 - **[Development Rules](/docs/RULES.md)** - Coding standards and best practices
+- **[Documentation Guide](/docs/DOCUMENTATION-GUIDE.md)** - How to maintain and update documentation
 - **[Project Context](/docs/CONTEXT.md)** - Business requirements and brand guidelines
+- **[Changelog](/CHANGELOG.md)** - Version history and detailed change tracking
+
+### 📝 Documentation Maintenance
+
+When making changes, always:
+1. Update relevant documentation files
+2. Add entry to CHANGELOG.md
+3. Follow the documentation guide for consistency
+4. Bump version number for releases
 
 ## 🚢 Deployment
 

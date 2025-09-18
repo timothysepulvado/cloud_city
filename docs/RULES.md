@@ -208,6 +208,52 @@ import HeavyComponent from './HeavyComponent';
 3. **Accessibility testing** - Use axe-core
 4. **Performance testing** - Lighthouse CI
 
+## 📝 Documentation Maintenance
+
+### When to Update Documentation
+
+**ALWAYS update documentation when:**
+1. **Adding new frameworks/libraries** - Update package list, tech stack, setup instructions
+2. **Creating new components** - Add to COMPONENT-REFERENCE.md
+3. **Changing design tokens** - Update DESIGN-SYSTEM.md
+4. **Modifying patterns** - Update UI-PATTERNS.md
+5. **Breaking changes** - Update all affected docs + CHANGELOG.md
+6. **Adding features** - Update relevant docs + CHANGELOG.md
+7. **Fixing bugs** - Update CHANGELOG.md
+
+### Documentation Checklist
+- [ ] Update CHANGELOG.md with version, date, and changes
+- [ ] Update README.md if setup/config changes
+- [ ] Update DESIGN-SYSTEM.md for visual changes
+- [ ] Update UI-PATTERNS.md for behavior changes
+- [ ] Update COMPONENT-REFERENCE.md for new/modified components
+- [ ] Update package.json version number
+- [ ] Add migration notes if breaking changes
+
+### Changelog Format
+
+```markdown
+## [Version] - YYYY-MM-DD
+
+### Added
+- New features or capabilities
+
+### Changed
+- Changes to existing functionality
+
+### Fixed
+- Bug fixes
+
+### Deprecated
+- Features marked for removal
+
+### Removed
+- Features that were removed
+
+### Security
+- Security improvements
+```
+
 ## 📈 Git Workflow
 
 ### Commit Messages
@@ -219,6 +265,8 @@ fix: resolve mobile navigation overflow
 docs: update deployment instructions
 style: format code with prettier
 refactor: extract Card component
+chore: update dependencies
+perf: optimize image loading
 
 # ❌ BAD
 updated stuff
@@ -233,12 +281,19 @@ changes
 feature/video-showcase
 bugfix/mobile-nav
 hotfix/cta-button
+docs/update-readme
+chore/dependency-updates
 
 # ❌ BAD
 my-branch
 test
 new-stuff
 ```
+
+### Version Bumping
+- **Major (1.0.0)**: Breaking changes
+- **Minor (0.1.0)**: New features, backwards compatible
+- **Patch (0.0.1)**: Bug fixes, small improvements
 
 ## 🔄 Code Review Checklist
 
