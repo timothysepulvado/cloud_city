@@ -62,6 +62,7 @@ export const OUTCOMES = {
     { value: "70%", label: "Lower production costs" },
     { value: "50%", label: "Faster time to launch" },
     { value: "3×", label: "More content throughput" },
+    { value: "40%", label: "Better SEO & AI visibility" },
     { value: "Consistent", label: "Brand voice across channels" },
   ],
   disclaimer: "*Results vary by baseline workflows, templates, and volume.",
@@ -127,6 +128,7 @@ export const FEATURES = {
       "Manage logos, colors, fonts, visuals, voice & tone.",
       "Rapid image & copy generation — assistive, not replacement.",
       "Easy versioning, rollbacks, and approvals.",
+      "SEO-optimized content with AI/LLM best practices.",
     ],
   },
   integrations: {
@@ -146,6 +148,7 @@ export const MEASUREMENT = {
   items: [
     "Normalize metrics by platform (impressions, views, clicks, engagement).",
     "Per‑campaign and per‑asset breakdowns with CSV export.",
+    "SEO performance tracking and AI visibility metrics.",
     "Recommendations for next iterations.",
   ],
 }

@@ -26,6 +26,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Added email campaign slot in Showcase section (9:16 aspect ratio)
   - Custom styling with violet-to-rose gradient for email platform label
   - Email icon (✉) for platform identification
+
+- **SEO & AI/LLM Optimization Features**:
+  - Added SEO-optimized content capability to Features section
+  - Included SEO performance tracking in Measurement features
+  - Added "40% Better SEO & AI visibility" to Outcomes stats
+  - Comprehensive AI/LLM SEO roadmap in TODO list
   
 ### Enhanced
 - **Card Hover Effects**:
@@ -34,11 +40,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Smooth transition animations (300ms)
   - Consistent hover behavior across all sections
 
+- **CoreCapabilities Section**:
+  - Added scroll-triggered animations
+  - Staggered card reveals with Framer Motion
+
 ### Updated
 - **Documentation**:
   - TODO list reorganized with detailed version roadmap
-  - Added specific tasks for each major feature area
+  - Added comprehensive SEO & AI/LLM optimization tasks
   - Version planning updated (v0.2.5 through v1.0.0)
+  - Expanded SEO section to include AI/LLM optimization strategies
 
 ### Pending in v0.2.5
 - Hero video update (awaiting production Cloudinary URL)
