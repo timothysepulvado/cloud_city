@@ -105,9 +105,9 @@ export const SHOWCASE = {
     },
     {
       src: "https://res.cloudinary.com/dbhzrfwvx/video/upload/v1757959292/s5xqh6rfdhrbp9ilcnu4.mp4",
-      ariaLabel: "Instagram Post Example",
-      platform: "instagram-post",
-      format: "1:1", // Square video
+      ariaLabel: "Email Campaign Example",
+      platform: "email",
+      format: "9:16", // Vertical video for email campaign preview
     },
     {
       src: "https://res.cloudinary.com/dbhzrfwvx/video/upload/v1757959481/gzs6cxvu254gksckvh5h.mp4",

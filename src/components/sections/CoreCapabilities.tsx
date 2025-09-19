@@ -1,20 +1,38 @@
-import React from 'react'
+'use client';
+
+import React, { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { CORE_CAPABILITIES } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import type { SectionProps } from '@/types'
+import { staggerContainer, fadeInUp, ANIMATION } from '@/lib/animations'
 
 export const CoreCapabilities: React.FC<SectionProps> = ({ className }) => {
   const capabilities = Object.values(CORE_CAPABILITIES)
+  const sectionRef = useRef<HTMLElement>(null)
+  const isInView = useInView(sectionRef, { 
+    once: ANIMATION.viewport.once, 
+    amount: ANIMATION.viewport.amount 
+  })
 
   return (
-    <section 
+    <motion.section 
+      ref={sectionRef}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={staggerContainer}
       className={cn('grid grid-cols-1 md:grid-cols-3 gap-[18px] my-7', className)}
       aria-label="Core capabilities"
     >
       {capabilities.map((capability, index) => (
-        <div key={capability.badge} id={capability.badge.toLowerCase()}>
+        <motion.div 
+          key={capability.badge} 
+          id={capability.badge.toLowerCase()}
+          variants={fadeInUp}
+          custom={index}
+        >
           <Card>
             <Badge variant="gradient">{capability.badge}</Badge>
             
@@ -30,9 +48,9 @@ export const CoreCapabilities: React.FC<SectionProps> = ({ className }) => {
               {capability.description}
             </p>
           </Card>
-        </div>
+        </motion.div>
       ))}
-    </section>
+    </motion.section>
   )
 }
 

@@ -25,7 +25,7 @@ export const Features: React.FC<SectionProps> = ({ className }) => {
         className={cn('grid grid-cols-1 md:grid-cols-2 gap-[18px] my-7', className)}
       >
         {/* Creative Features */}
-        <motion.div variants={fadeInUp} whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}>
+        <motion.div variants={fadeInUp}>
           <Card>
           <div className="text-[12px] font-semibold uppercase tracking-[0.3px] text-muted mb-[6px]">
             {FEATURES.creative.eyebrow}
@@ -49,7 +49,7 @@ export const Features: React.FC<SectionProps> = ({ className }) => {
         </motion.div>
 
         {/* Integrations */}
-        <motion.div variants={fadeInUp} whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}>
+        <motion.div variants={fadeInUp}>
           <Card>
           <div className="text-[12px] font-semibold uppercase tracking-[0.3px] text-muted mb-[6px]">
             {FEATURES.integrations.eyebrow}
@@ -79,7 +79,6 @@ export const Features: React.FC<SectionProps> = ({ className }) => {
         initial="hidden"
         animate={measurementInView ? "visible" : "hidden"}
         variants={fadeInUp}
-        whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
       >
         <Card className={className}>
         <div className="text-[12px] font-semibold uppercase tracking-[0.3px] text-muted mb-[6px]">

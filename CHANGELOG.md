@@ -19,6 +19,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Unit and integration testing setup
 - Complete page transitions and navigation animations
 
+## [0.2.5] - 2025-09-19 - IN PROGRESS
+
+### Added
+- **Email Campaign Preview**:
+  - Added email campaign slot in Showcase section (9:16 aspect ratio)
+  - Custom styling with violet-to-rose gradient for email platform label
+  - Email icon (✉) for platform identification
+  
+### Enhanced
+- **Card Hover Effects**:
+  - All cards now have violet border on hover
+  - Violet shadow effect matching video hover style
+  - Smooth transition animations (300ms)
+  - Consistent hover behavior across all sections
+
+### Updated
+- **Documentation**:
+  - TODO list reorganized with detailed version roadmap
+  - Added specific tasks for each major feature area
+  - Version planning updated (v0.2.5 through v1.0.0)
+
+### Pending in v0.2.5
+- Hero video update (awaiting production Cloudinary URL)
+- Complete remaining section animations
+
 ## [0.2.4] - 2025-09-18
 
 ### Added

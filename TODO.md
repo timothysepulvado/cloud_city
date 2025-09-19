@@ -27,29 +27,84 @@
   - [x] Button micro-interactions
   - [ ] Smooth page transitions (partial - needs navigation animations)
 
-## 📊 Analytics & Tracking
-- [ ] Google Analytics 4 setup
-- [ ] Event tracking for key actions
+## 🎨 Polish & Final Touches (v0.2.5) - IN PROGRESS
+- [ ] **Hero Section Updates**
+  - [ ] Replace placeholder video with production Cloudinary video
+  - [ ] Verify video controls and accessibility
+- [ ] **Showcase Section Enhancement**
+  - [ ] Add email campaign preview slot (9:16 aspect ratio)
+  - [ ] Match sizing with other vertical videos
+  - [ ] Add appropriate platform label
+- [ ] **Card Hover Effects**
+  - [ ] Add violet border on hover to all cards
+  - [ ] Add violet shadow effect matching video hover style
+  - [ ] Apply to Features, CoreCapabilities, Outcomes sections
+- [ ] **Complete Animation System**
+  - [ ] CoreCapabilities - Grid cards with staggered reveals
+  - [ ] Outcomes - Timeline or progress animations
+  - [ ] Security - Shield/lock icon animations
+  - [ ] Comparison - Table row reveals
+  - [ ] ContactCTA - Final call-to-action emphasis animations
+  - [ ] Header - Navigation link hover states
+  - [ ] Mobile menu - Smooth transitions
+  - [ ] Modal - Form field focus animations
+
+## 🚀 Deployment (v0.3.0)
+- [ ] **Vercel Setup**
+  - [ ] Create Vercel project
+  - [ ] Connect GitHub repository
+  - [ ] Configure build settings
+  - [ ] Set up environment variables
+- [ ] **Domain Configuration**
+  - [ ] Connect custom domain
+  - [ ] Configure DNS settings
+  - [ ] SSL certificate setup
+- [ ] **Deployment Features**
+  - [ ] Preview deployments for branches
+  - [ ] Edge function optimization
+  - [ ] Build optimization settings
+
+## 📊 Analytics & Tracking (v0.3.1)
+- [ ] **Google Analytics 4**
+  - [ ] Create GA4 property
+  - [ ] Install tracking code
+  - [ ] Configure data streams
+- [ ] **Event Tracking**
   - [ ] Demo request submissions
-  - [ ] Video plays
+  - [ ] Video plays and engagement
   - [ ] Navigation clicks
-- [ ] Conversion tracking
-- [ ] Heat mapping integration (Hotjar/Clarity)
+  - [ ] Scroll depth tracking
+  - [ ] Form field interactions
+- [ ] **Conversion Tracking**
+  - [ ] Set up conversion goals
+  - [ ] Track form completions
+  - [ ] Monitor user journeys
+- [ ] **Heat Mapping**
+  - [ ] Microsoft Clarity integration
+  - [ ] Session recording setup
+  - [ ] Heatmap configuration
 
-## 🚢 Deployment
-- [ ] Vercel deployment configuration
-- [ ] Environment variables setup
-- [ ] Custom domain configuration
-- [ ] SSL certificate
-- [ ] Edge function optimization
-
-## ⚡ Performance Optimization
-- [ ] Image optimization with next/image
-- [ ] Video lazy loading improvements
-- [ ] Bundle size analysis and reduction
-- [ ] Critical CSS extraction
-- [ ] Font optimization (subsetting)
-- [ ] Implement caching strategies
+## ⚡ Performance Optimization (v0.3.2)
+- [ ] **Image Optimization**
+  - [ ] Convert all images to next/image
+  - [ ] Implement responsive image sizes
+  - [ ] Add blur placeholders
+  - [ ] Optimize image formats (WebP/AVIF)
+- [ ] **Video Optimization**
+  - [ ] Lazy loading with Intersection Observer
+  - [ ] Preload metadata only
+  - [ ] Optimize video compression
+  - [ ] Add loading states
+- [ ] **Bundle Optimization**
+  - [ ] Analyze bundle size with webpack-bundle-analyzer
+  - [ ] Code splitting strategies
+  - [ ] Tree shaking unused code
+  - [ ] Minimize JavaScript payload
+- [ ] **Loading Performance**
+  - [ ] Critical CSS extraction
+  - [ ] Font subsetting and preloading
+  - [ ] Resource hints (preconnect, prefetch)
+  - [ ] Service worker caching
 
 ## 🔒 Enhanced Features
 - [ ] Loading states and skeletons
@@ -80,14 +135,27 @@
 - [ ] Accessibility testing
 - [ ] Performance testing
 
-## 🔍 SEO Optimization
-- [ ] Meta tags implementation
-- [ ] Open Graph tags
-- [ ] Twitter cards
-- [ ] Structured data (JSON-LD)
-- [ ] XML sitemap
-- [ ] Robots.txt optimization
-- [ ] Canonical URLs
+## 🔍 SEO Optimization (v0.3.3)
+- [ ] **Meta Tags**
+  - [ ] Dynamic page titles
+  - [ ] Meta descriptions for all pages
+  - [ ] Keywords optimization
+  - [ ] Viewport and charset tags
+- [ ] **Social Sharing**
+  - [ ] Open Graph tags (og:title, og:description, og:image)
+  - [ ] Twitter cards setup
+  - [ ] LinkedIn meta tags
+  - [ ] Social preview images
+- [ ] **Structured Data**
+  - [ ] Organization schema
+  - [ ] Website schema
+  - [ ] FAQ schema (if applicable)
+  - [ ] Product/Service schema
+- [ ] **Technical SEO**
+  - [ ] XML sitemap generation
+  - [ ] Robots.txt configuration
+  - [ ] Canonical URL setup
+  - [ ] 301 redirects strategy
 
 ## 📚 Content Management
 - [ ] Blog section (if needed)
@@ -125,10 +193,13 @@
 4. **Low**: Future considerations
 
 ### Version Planning
-- **v0.3.0**: Framer Motion animations complete
-- **v0.4.0**: Analytics and deployment ready
-- **v0.5.0**: Performance optimized
-- **v1.0.0**: Production-ready with testing
+- **v0.2.5**: Polish & final touches (email preview, card hover effects)
+- **v0.3.0**: Deployment to Vercel
+- **v0.3.1**: Analytics integration
+- **v0.3.2**: Performance optimization
+- **v0.3.3**: SEO optimization
+- **v0.4.0**: Testing suite complete
+- **v1.0.0**: Production-ready with all features
 
 ### Resources
 - All copy/text: `src/lib/constants.ts`
@@ -141,4 +212,4 @@
 
 ---
 
-Last Updated: 2025-09-18 (v0.2.3)
+Last Updated: 2025-09-19 (v0.2.5)

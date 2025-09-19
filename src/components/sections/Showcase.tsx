@@ -76,6 +76,12 @@ export const Showcase: React.FC<SectionProps> = ({ className }) => {
           color: 'bg-red-600 text-white',
           icon: '▶' // Play icon
         }
+      case 'email':
+        return { 
+          label: 'Email Campaign', 
+          color: 'bg-gradient-to-r from-[var(--violet)] to-[var(--rose)] text-white',
+          icon: '✉' // Email icon
+        }
       default:
         return { 
           label: 'Video', 
